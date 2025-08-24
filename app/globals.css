@@ -1,26 +1,100 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --font-dancing: var(--font-dancing);
+  --font-comfortaa: var(--font-comfortaa);
+  
+  --color-coral-600: rgb(255 107 107);
+  --color-sky-100: rgb(224 242 254);
+  --color-sky-700: rgb(3 105 161);
+  --color-sky-800: rgb(7 89 133);
+  --color-blue-50: rgb(239 246 255);
+  --color-cyan-100: rgb(207 250 254);
+  --color-cyan-200: rgb(165 243 252);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to bottom right, var(--color-sky-100), var(--color-blue-50), var(--color-cyan-100));
+  min-height: 100vh;
+}
+
+.text-gradient-hawaiian {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FFE66D 25%, #4ECDC4 50%, #95E1D3 75%, #FA8072 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% 200%;
+  animation: gradient-wave 3s ease infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-wave {
+  animation: wave 2.5s ease-in-out infinite;
+}
+
+.text-shadow-glow {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5),
+               0 0 40px rgba(255, 182, 193, 0.4),
+               0 0 60px rgba(135, 206, 235, 0.3);
+}
+
+.hawaiian-shadow {
+  box-shadow: 0 20px 40px -15px rgba(255, 107, 107, 0.3),
+              0 10px 25px -10px rgba(78, 205, 196, 0.3);
+}
+
+.font-dancing {
+  font-family: var(--font-dancing);
+}
+
+.font-comfortaa {
+  font-family: var(--font-comfortaa);
+}
+
+@keyframes gradient-wave {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: rotate(-3deg);
+  }
+  50% {
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes island-bounce {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05);
+  }
+}
+
+/* Hide Next.js/Turbopack development indicator */
+[data-nextjs-scroll-focus-boundary] + div > div:has(svg) {
+  display: none !important;
 }

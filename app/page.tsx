@@ -1,103 +1,75 @@
-import Image from "next/image";
+import AnimatedText from '@/components/AnimatedText'
+import TropicalElements from '@/components/TropicalElements'
+import { MapPin } from 'lucide-react'
 
 export default function Home() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="relative min-h-screen overflow-hidden flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+      {/* Tropical background elements */}
+      <TropicalElements />
+      
+      {/* Main content */}
+      <div className="relative z-10 text-center space-y-8 max-w-4xl mx-auto">
+        {/* Logo/Brand Name */}
+        <div className="space-y-4">
+          <h1 className="font-dancing text-6xl sm:text-7xl md:text-8xl lg:text-9xl text-gradient-hawaiian animate-wave">
+            MOCHILAND
+          </h1>
+          <p className="font-comfortaa text-lg sm:text-xl md:text-2xl text-sky-700 opacity-90">
+            Artisanal Hawaiian Donuts
+          </p>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        
+        {/* Animated Coming Soon */}
+        <div className="py-8">
+          <AnimatedText />
+        </div>
+        
+        {/* Opening Information */}
+        <div className="space-y-6">
+          <div className="inline-block bg-white/80 backdrop-blur-sm rounded-2xl px-8 py-6 hawaiian-shadow">
+            <p className="font-comfortaa text-2xl sm:text-3xl text-coral-600 mb-2">
+              Opening October 2024
+            </p>
+            <p className="font-comfortaa text-lg text-sky-700 animate-pulse-slow">
+              Get ready for a taste of paradise! 🌺
+            </p>
+          </div>
+          
+          {/* Location */}
+          <div className="flex items-center justify-center gap-2 text-sky-700 hover:text-sky-800 transition-colors">
+            <MapPin className="w-5 h-5" />
+            <address className="font-comfortaa not-italic text-lg">
+              Hawaii Location
+            </address>
+          </div>
+        </div>
+        
+        {/* Donut decoration */}
+        <div className="flex justify-center gap-4 text-4xl animate-float">
+          <span className="opacity-60">🍩</span>
+          <span className="opacity-80">🍩</span>
+          <span className="opacity-60">🍩</span>
+        </div>
+      </div>
+      
+      {/* Footer wave */}
+      <div className="absolute bottom-0 left-0 right-0">
+        <svg 
+          viewBox="0 0 1440 200" 
+          className="w-full h-auto"
+          preserveAspectRatio="none"
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
+          <path 
+            fill="rgba(56, 189, 248, 0.1)" 
+            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
+          <path 
+            fill="rgba(34, 211, 238, 0.1)" 
+            d="M0,160L48,144C96,128,192,96,288,96C384,96,480,128,576,144C672,160,768,160,864,144C960,128,1056,96,1152,96C1248,96,1344,128,1392,144L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
           />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </svg>
+      </div>
     </div>
-  );
+  )
 }
