@@ -14,16 +14,17 @@ export default function Icon() {
       <div
         style={{
           fontSize: 24,
-          background: 'linear-gradient(135deg, #FF6B6B 0%, #FFE66D 100%)',
+          background: '#8B4513',
           width: '100%',
           height: '100%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           borderRadius: '50%',
+          color: '#FFF',
         }}
       >
-        🍩
+        ☕
       </div>
     ),
     {
