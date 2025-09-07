@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
       },
     ],
-    sitemap: 'https://mochiland.com/sitemap.xml', // Update with your actual domain
+    sitemap: 'https://mochilandusa.com/sitemap.xml',
   }
 }
